@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geodemia AI - Exploring the Boundaries of Geography</title>
+    
+    <!-- Fonts: Varela Round (Primary) and Montserrat (Secondary) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- MapLibre GL JS CSS -->
+    <link href="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.css" rel="stylesheet" />
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         VIEW 1: Immersive Landing Page (antigravity.google style)
+         ========================================== -->
+    <div id="landing-view" class="view-container active">
+        <!-- Interactive Background Particles -->
+        <canvas id="particles-canvas"></canvas>
+
+        <!-- Brand Header (geodemia.com style) -->
+        <header class="geodemia-header">
+            <div class="brand">
+                <a href="#/" class="brand-link">
+                    <img class="brand-logo" src="https://geodemia.com/wp-content/uploads/2025/07/cropped-Gemini_Generated_Image_5xbndl5xbndl5xbn-Photoroom-1.png" alt="Geodemia Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="https://geodemia.com/about/" target="_blank">About</a>
+                <a href="https://geodemia.com/services/" target="_blank">Services</a>
+                <a href="https://geodemia.com/testimonials/" target="_blank">Testimonials</a>
+                <a href="https://tools.geodemia.com/" target="_blank">Geodemia Tools</a>
+                <a href="#/app" class="active">Geodemia AI</a>
+                <a href="https://blog.geodemia.com/" target="_blank">Blog</a>
+                <a href="https://geodemia.com/contact/" target="_blank">Contact</a>
+            </nav>
+            <div class="header-cta">
+                <a href="https://geodemia.com/contact/" target="_blank" class="connect-btn">Connect</a>
+            </div>
+        </header>
+
+        <!-- Immersive Hero Content -->
+        <main class="hero-section">
+            <div class="hero-content">
+                <span class="hero-badge">🇮🇳 INDIA'S #1 OPEN SOURCE GEOSPATIAL HUB</span>
+                <h1 class="hero-title">India's Biggest Open Source<br><span class="hero-title-accent">Geospatial Data Hub</span></h1>
+                <p class="hero-subtitle">
+                    Born in India. Built for the world. 🌍 Search, visualise, and extract from <strong>76+ massive spatial databases</strong>, or use our real-time <strong>AI Agent Scraper</strong> to auto-outline boundaries instantly.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#/login" class="cta-btn btn-glowing">Launch Application</a>
+                    <a href="https://geodemia.com/services/" target="_blank" class="cta-btn btn-secondary">Learn Services</a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Premium Footer -->
+        <footer class="geodemia-footer">
+            <div class="footer-links">
+                <span>&copy; 2026 Geodemia. All rights reserved.</span>
+                <a href="https://geodemia.com/about/" target="_blank">About Us</a>
+                <a href="https://geodemia.com/contact/" target="_blank">Contact</a>
+                <a href="https://tools.geodemia.com/" target="_blank">Tools</a>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- ==========================================
+         VIEW 2: Minimalist Login Page (claude.ai/login style)
+         ========================================== -->
+    <div id="login-view" class="view-container">
+        <canvas id="login-particles"></canvas>
+        
+        <header class="geodemia-header">
+            <div class="brand">
+                <a href="#/" class="brand-link">
+                    <img class="brand-logo" src="https://geodemia.com/wp-content/uploads/2025/07/cropped-Gemini_Generated_Image_5xbndl5xbndl5xbn-Photoroom-1.png" alt="Geodemia Logo">
+                </a>
+            </div>
+            <a href="#/" class="back-link"><i class="fa fa-arrow-left"></i> Back to Home</a>
+        </header>
+
+        <main class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <h2>Welcome to Geodemia AI</h2>
+                    <p>Enter your details to access the geospatial dashboard</p>
+                </div>
+                
+                <form id="login-form" class="login-form">
+                    <div class="input-group">
+                        <label for="email-input">Email Address</label>
+                        <input type="email" id="email-input" placeholder="name@company.com" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Continue with Email</button>
+                </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="oauth-buttons">
+                    <button class="oauth-btn" id="btn-google-login">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/color-themes/0.1.0/images/google-logo.svg" alt="Google Logo" class="oauth-logo" onerror="this.src='https://www.google.com/favicon.ico'">
+                        Continue with Google
+                    </button>
+                    <button class="oauth-btn" id="btn-github-login">
+                        <i class="fab fa-github oauth-logo-git"></i>
+                        Continue with GitHub
+                    </button>
+                </div>
+                
+                <p class="login-fineprint">
+                    By continuing, you agree to Geodemia's <a href="https://geodemia.com/about/" target="_blank">Terms of Service</a> and <a href="https://geodemia.com/about/" target="_blank">Privacy Policy</a>.
+                </p>
+            </div>
+        </main>
+    </div>
+
+
+    <!-- ==========================================
+         VIEW 3: GIS Application Dashboard (Previously built)
+         ========================================== -->
+    <div id="app-view" class="view-container">
+        <div class="app-container">
+            <!-- App Dashboard Header -->
+            <header class="app-header">
+                <div class="brand">
+                    <a href="#/" class="brand-link">
+                        <img class="brand-logo" src="https://geodemia.com/wp-content/uploads/2025/07/cropped-Gemini_Generated_Image_5xbndl5xbndl5xbn-Photoroom-1.png" alt="Geodemia Logo">
+                    </a>
+                    <span class="brand-badge">AI PORTAL</span>
+                </div>
+                <div class="header-actions">
+                    <a href="#/" class="nav-btn"><i class="fa fa-home"></i> Home</a>
+                    <button class="nav-btn" id="btn-logout"><i class="fa fa-sign-out-alt"></i> Log Out</button>
+                </div>
+            </header>
+
+            <!-- Main App Body -->
+            <div class="app-body">
+                <!-- Sidebar Panel: Search & Directory -->
+                <!-- Sidebar Panel: Search & Directory -->
+                <aside class="sidebar-panel">
+                    <!-- Tab Switcher -->
+                    <div class="sidebar-tabs">
+                        <button class="tab-btn active" id="tab-btn-catalog" onclick="switchSidebarTab('catalog')">
+                            <i class="fa fa-database"></i> Catalog (76)
+                        </button>
+                        <button class="tab-btn" id="tab-btn-scraper" onclick="switchSidebarTab('scraper')">
+                            <i class="fa fa-robot"></i> AI Agent Scraper
+                        </button>
+                    </div>
+
+                    <!-- TAB 1: Dataset Catalog -->
+                    <div id="tab-content-catalog" class="sidebar-tab-content active">
+                        <div class="search-section">
+                            <h2>Search Datasets</h2>
+                            <p class="subtitle">Search 76 spatial databases & topographical maps</p>
+                            
+                            <div class="search-box">
+                                <i class="fa fa-search search-icon"></i>
+                                <input type="text" id="dataset-search" placeholder="Search railways, boundaries, topo maps...">
+                                <button id="clear-search" class="clear-btn" style="display: none;"><i class="fa fa-times"></i></button>
+                            </div>
+
+                            <!-- Category Pills -->
+                            <div class="filter-group">
+                                <label>Categories</label>
+                                <div class="category-pills" id="category-filters">
+                                    <span class="pill active" data-category="all">All Data</span>
+                                    <span class="pill" data-category="maps">Topo Maps</span>
+                                    <span class="pill" data-category="buildings">Buildings</span>
+                                    <span class="pill" data-category="boundaries">Boundaries</span>
+                                    <span class="pill" data-category="scrapers">Open Data</span>
+                                    <span class="pill" data-category="tools">Tools</span>
+                                </div>
+                            </div>
+
+                            <!-- File Format Filters -->
+                            <div class="filter-group row-group">
+                                <div class="select-wrapper">
+                                    <label for="format-select">Format</label>
+                                    <select id="format-select">
+                                        <option value="all">Any Format</option>
+                                        <option value="pmtiles">PMTiles</option>
+                                        <option value="geojson">GeoJSON / JSON</option>
+                                        <option value="zip">ZIP / 7z Archive</option>
+                                        <option value="code">Scraper Code</option>
+                                    </select>
+                                </div>
+                                <div class="select-wrapper">
+                                    <label for="sort-select">Sort By</label>
+                                    <select id="sort-select">
+                                        <option value="name">Name (A-Z)</option>
+                                        <option value="files">File Count</option>
+                                        <option value="size">Size</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dataset List Scroll Area -->
+                        <div class="dataset-list-container">
+                            <div class="results-count" id="results-count">Showing 76 datasets</div>
+                            <div class="dataset-cards" id="dataset-cards-container">
+                                <div class="loading-state">
+                                    <i class="fa fa-spinner fa-spin"></i> Loading dataset catalog...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: AI Agent Scraper -->
+                    <div id="tab-content-scraper" class="sidebar-tab-content">
+                        <div class="scraper-section">
+                            <h2>AI Geospatial Scraper</h2>
+                            <p class="subtitle">Use agentic LLM scrapers to discover boundaries and geocoded properties in real-time</p>
+                            
+                            <div class="search-box">
+                                <i class="fa fa-robot search-icon" style="color: #FF9933;"></i>
+                                <input type="text" id="ai-scraper-query" placeholder="e.g. Scrape Taj Mahal complex boundaries...">
+                            </div>
+
+                            <div class="quick-suggestions-label">Try suggestions:</div>
+                            <div class="suggestion-pills">
+                                <span class="sugg-pill" data-query="Scrape Delhi Metro Line 3 Metro Stations">🚇 Delhi Metro Stations</span>
+                                <span class="sugg-pill" data-query="Scrape Taj Mahal Complex boundaries">🕌 Taj Mahal Boundary</span>
+                                <span class="sugg-pill" data-query="Scrape Gir National Park Lion Sanctuary boundary">🦁 Gir Sanctuary</span>
+                                <span class="sugg-pill" data-query="Scrape Bangalore IT parks and coordinates">🏖️ Bangalore Tech Hubs</span>
+                            </div>
+
+                            <div class="scraper-actions">
+                                <button id="btn-run-scraper" class="run-scraper-btn">
+                                    <i class="fa fa-play-circle"></i> Run AI Scraper Agent
+                                </button>
+                            </div>
+
+                            <!-- Interactive Terminal Console -->
+                            <div class="scraper-console-container" id="scraper-console" style="display: none;">
+                                <div class="console-header">
+                                    <span><i class="fa fa-terminal"></i> Agent Console Output</span>
+                                    <span class="console-dot-green"></span>
+                                </div>
+                                <div class="console-body" id="scraper-console-lines">
+                                    <!-- Console logs print here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Map View Container -->
+                <main class="map-panel">
+                    <div id="map"></div>
+                    
+                    <!-- Map Overlay Glassmorphic Panel -->
+                    <div class="map-overlay-card">
+                        <h3>Spatial Previewer</h3>
+                        <p class="preview-status" id="preview-status">Select a vector dataset to overlay it on the map.</p>
+                        <div class="legend-container" id="legend-container" style="display: none;">
+                            <span class="legend-color-box"></span>
+                            <span class="legend-label" id="legend-label">Active Layer</span>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Side Drawer: Dataset Details & Exports -->
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="details-drawer" id="details-drawer">
+        <button class="drawer-close" id="drawer-close"><i class="fa fa-times"></i></button>
+        
+        <div class="drawer-content" id="drawer-content">
+            <!-- Populated dynamically via JavaScript -->
+        </div>
+    </div>
+
+    <!-- MapLibre GL JS -->
+    <script src="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.js"></script>
+    <!-- App Logic & Particle Renderer -->
+    <script src="app.js"></script>
+</body>
+</html>
