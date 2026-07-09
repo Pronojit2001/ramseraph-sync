@@ -1,0 +1,4 @@
+.env
+temp_sync_*
+__pycache__/
+*.json
